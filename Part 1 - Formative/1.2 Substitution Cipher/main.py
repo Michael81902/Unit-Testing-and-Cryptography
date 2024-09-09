@@ -4,11 +4,21 @@ alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 def sub_encode(text, codebet):
-    return ""
+    newstr=""
+    for let in text:
+        rahhh=alpha.index(let)
+        newstr+=codebet[rahhh]
+    return newstr
 
 
 def sub_decode(text, codebet):
-    return ""
+    newest=""
+    for let in text:
+        index=cipher_alphabet.index(let)
+        newest+=alpha[index]
+    return newest
+
+
 
 
 test = "HELLOWORLD"
@@ -17,4 +27,3 @@ enc = sub_encode(test, cipher_alphabet)
 dec = sub_decode(enc, cipher_alphabet)
 print(enc)
 print(dec)
-# If this worked, dec should be the same as test!
