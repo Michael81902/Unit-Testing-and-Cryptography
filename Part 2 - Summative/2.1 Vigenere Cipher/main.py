@@ -3,10 +3,19 @@
 alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 def vig_encode(text, keyword):
-  return ""
+  keyword_repeated = (keyword * (len(text) // len(keyword) + 1))[:len(text)]
+  str=""
+  for i in range(len(text)):
+    text_index=alpha.index(text[i])
+    key_index=alpha.index(keyword_repeated[i])
+    real_index=(text_index+key_index)%26
+    str+=alpha[real_index]
+  return str
+
 
 
 def vig_decode(text, keyword):
+
   return ""
 
 

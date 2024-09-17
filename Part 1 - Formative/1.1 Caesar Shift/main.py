@@ -7,7 +7,8 @@ def caesar_encode(text, n):
     new_str=""
     for let  in text:
         index=alpha.find(let)
-        new_str+=alpha[(index+n)% 26]
+        new_str+=alpha[(index+n)%26]
+    print(new_str)
     return new_str
 def caesar_decode(text, n):
     new_str = ""
@@ -24,3 +25,5 @@ dec = caesar_decode(enc, shift)
 print(enc)
 print(dec)
 # If this worked, dec should be the same as test!
+
+ 
