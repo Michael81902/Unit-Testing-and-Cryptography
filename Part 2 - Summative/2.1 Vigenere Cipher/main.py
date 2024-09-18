@@ -3,11 +3,11 @@
 alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 def vig_encode(text, keyword):
-  keyword_repeated = (keyword * (len(text) // len(keyword) + 1))[:len(text)]
+  typeshi = (keyword * (len(text) // len(keyword) + 1))[:len(text)]
   str=""
   for i in range(len(text)):
-    text_index=alpha.index(text[i])
-    key_index=alpha.index(keyword_repeated[i])
+    text_index=alpha.find(text[i])
+    key_index=alpha.find(typeshi[i])
     real_index=(text_index+key_index)%26
     str+=alpha[real_index]
   return str
@@ -15,12 +15,21 @@ def vig_encode(text, keyword):
 
 
 def vig_decode(text, keyword):
+  rahhhh= (keyword * (len(text) // len(keyword) + 1))[:len(text)]
+  str1=""
+  for i in range(len(text)):
+    text_index=alpha.index(text[i])
+    key_index=alpha.index(rahhhh[i])
+    real_index=(text_index-key_index)%26
+    str1+=alpha[real_index]
+  return str1
+
 
   return ""
 
 
-test = "THEQUICKBROWNFOXJUMPEDOVERTHELAZYDOG"
-vig_key = "TEST"
+test = "THEBRAVESSUCK"
+vig_key = "WHIT"
 enc = vig_encode(test, vig_key)
 dec = vig_decode(enc, vig_key)
 print(enc)
