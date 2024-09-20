@@ -6,6 +6,6 @@ from main import caesar_encode
 
 class TestCaesarEncode(TestCase):
     def test_encode(self):
-        self.assertEqual(caesar_encode("Hello World",  5) , "MJQQTBTWQI" )
+        self.assertEqual(caesar_encode("HELLOWORLD",  5) , "MJQQTBTWQI" )
 
 

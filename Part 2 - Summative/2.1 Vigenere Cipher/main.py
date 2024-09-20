@@ -18,14 +18,14 @@ def vig_decode(text, keyword):
   rahhhh= (keyword * (len(text) // len(keyword) + 1))[:len(text)]
   str1=""
   for i in range(len(text)):
-    text_index=alpha.index(text[i])
-    key_index=alpha.index(rahhhh[i])
+    text_index=alpha.find(text[i])
+    key_index=alpha.find(rahhhh[i])
     real_index=(text_index-key_index)%26
     str1+=alpha[real_index]
   return str1
 
 
-  return ""
+
 
 
 test = "THEBRAVESSUCK"
