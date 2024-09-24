@@ -14,3 +14,11 @@ class TestVigEncode(TestCase):
         text= "ThEBraVESsuCk"
         keyword=("WHIT")
         self.assertEqual(vig_encode(text, keyword), "POMUNHDXOZCVG")
+    def test_vig_encode5(self):
+        text= "T HE  BR AV ES S U C K "
+        keyword=("WHIT")
+        self.assertEqual(vig_encode(text, keyword), "P OM  UN HD XO Z C V G ")
+    def test_vig_encode6(self):
+        text="ThE! Braves! Suck!"
+        keyword=("WHIT")
+        self.assertEqual(vig_encode(text, keyword), "POM! UNHDXO! ZCVG!")

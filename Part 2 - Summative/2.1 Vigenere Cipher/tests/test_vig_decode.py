@@ -11,5 +11,11 @@ class TestVigDecode(TestCase):
         keyword = "WHIT"
         self.assertEqual(vig_decode(text, keyword), "THEBRAVESSUCK")
 
-    def test_vig_capitalize(self):
-        text
+    def test_vig_decode1(self):
+        text = "PoMUNhDXOzCVG"
+        keyword = ("WHIT")
+        self.assertEqual(vig_decode(text, keyword), "THEBRAVESSUCK")
+    def test_vig_decode2(self):
+        text = " P OM  UN HD XO Z C V G"
+        keyword = ("WHIT")
+        self.assertEqual(vig_decode(text, keyword), " T HE  BR AV ES S U C K")
