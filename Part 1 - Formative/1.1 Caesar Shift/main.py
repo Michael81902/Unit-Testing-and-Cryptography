@@ -6,15 +6,19 @@ alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 def caesar_encode(text, n):
     new_str=""
     for let  in text:
-        index=alpha.find(let)
-        new_str+=alpha[(index+n)%26]
-    print(new_str)
+        if let.upper() in alpha:
+            index=alpha.find(let.upper())
+            new_str+=alpha[(index+n)%26]
+        else:
+            new_str+=let
     return new_str
 def caesar_decode(text, n):
     new_str = ""
     for let in text:
-        index = alpha.index(let)
-        new_str += alpha[(index - n) % 26]
+        if let.upper() in alpha:
+            index = alpha.find(let.upper())
+            new_str += alpha[(index - n) % 26]
+        else: new_str += let
     return new_str
 
 
