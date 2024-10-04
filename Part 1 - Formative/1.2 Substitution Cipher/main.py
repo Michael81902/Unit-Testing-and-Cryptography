@@ -14,7 +14,7 @@ def sub_encode(text, codebet):
 def sub_decode(text, codebet):
     newest=""
     for let in text:
-        index=cipher_alphabet.index(let)
+        index=codebet.index(let)
         newest+=alpha[index]
     return newest
 
